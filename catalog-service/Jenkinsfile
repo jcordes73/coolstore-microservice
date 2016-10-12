@@ -17,8 +17,7 @@ node {
     stage 'Automated tests'
     echo 'This stage simulates automated tests'
 
-    sh("""set -x; \
-				cat << EOF > ~/.m2/settings.xml
+    sh("""set -x; mkdir -p ~/.m2 ; cat << EOF > ~/.m2/settings.xml
                     <settings>
                       <mirrors>
                         <mirror>
@@ -27,8 +26,9 @@ node {
                           <mirrorOf>external:*</mirrorOf>
                         </mirror>
                       </mirrors>
-                    </settings
-				EOF""")
+                    </settings>
+				EOF
+				""")
 
 
     sh "${mvnHome}/bin/mvn -f catalog-service -B -Dmaven.test.failure.ignore clean package verify"
