@@ -16,6 +16,21 @@ node {
 
     stage 'Automated tests'
     echo 'This stage simulates automated tests'
+
+    sh("""set -x; \
+				cat << EOF > ~/.m2/settings.xml
+                    <settings>
+                      <mirrors>
+                        <mirror>
+                          <id>sti-mirror</id>
+                          <url>${env.MAVEN_MIRROR_URL}</url>
+                          <mirrorOf>external:*</mirrorOf>
+                        </mirror>
+                      </mirrors>
+                    </settings
+				EOF""")
+
+
     sh "${mvnHome}/bin/mvn -f catalog-service -B -Dmaven.test.failure.ignore clean package verify"
 
     stage 'Deploy to QA'
