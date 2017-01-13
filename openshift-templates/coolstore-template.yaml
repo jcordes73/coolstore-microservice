@@ -1054,3 +1054,6 @@ parameters:
   generate: expression
   name: CATALOG_DB_PASSWORD
   required: true
+- description: NPM mirror url. If nexus is deployed locally, use nexus url (e.g. http://nexus.ci:8081/content/content/repositories/npm/)
+  displayName: NPM mirror url
+  name: NPM_MIRROR
