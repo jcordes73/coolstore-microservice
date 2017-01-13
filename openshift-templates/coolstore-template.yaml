@@ -45,6 +45,9 @@ objects:
       type: Git
     strategy:
       sourceStrategy:
+        env:
+        - name: NPM_MIRROR
+          value: ${NPM_MIRROR}
         from:
           kind: ImageStreamTag
           name: nodejs:4
