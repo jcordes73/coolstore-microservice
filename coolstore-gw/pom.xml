@@ -180,7 +180,7 @@
 				<repository>
 					<id>jboss-earlyaccess-repository</id>
 					<name>jboss-earlyaccess-repository</name>
-					<url>http://maven.repository.redhat.com/earlyaccess/all/</url>
+					<url>${env.MAVEN_MIRROR_URL}</url>
 					<releases>
 						<enabled>true</enabled>
 						<updatePolicy>daily</updatePolicy>
@@ -195,7 +195,7 @@
 				<pluginRepository>
 					<id>jboss-earlyaccess-repository</id>
 					<name>jboss-earlyaccess-repository</name>
-					<url>http://maven.repository.redhat.com/earlyaccess/all/</url>
+					<url>${env.MAVEN_MIRROR_URL}</url>
 					<releases>
 						<enabled>true</enabled>
 						<updatePolicy>daily</updatePolicy>
