@@ -199,7 +199,7 @@ objects:
       sourceStrategy:
         env:
         - name: MAVEN_ARGS
-          value: package -DskipTests -Dfabric8.skip -e -B -Pearly-access-repo
+          value: package -DskipTests -Dfabric8.skip -e -B
         - name: MAVEN_MIRROR_URL
           value: ${MAVEN_MIRROR_URL}
         forcePull: true
