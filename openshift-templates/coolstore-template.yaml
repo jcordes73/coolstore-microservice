@@ -83,6 +83,14 @@ objects:
             value: coolstore-gw
           - name: HOSTNAME_HTTP
             value: web-ui:8080
+          - name: SSO_REALM
+            value: ${SSO_REALM}
+          - name: SSO_URL
+            value: ${SSO_URL}
+          - name: SSO_CLIENT_ID
+            value: ${SSO_CLIENT_ID}
+          - name: SSO_PUBLIC_KEY
+            value: ${SSO_PUBLIC_KEY}
           image: web-ui
           imagePullPolicy: Always
           name: web-ui
@@ -1109,3 +1117,17 @@ parameters:
   name: KIE_CONTAINER_DEPLOYMENT
   required: true
   value: CoolStoreRulesContainer=com.redhat:coolstore:2.0.0
+- description: SSO Realm
+  name: SSO_REALM
+  value: coolstore
+  required: true
+- description: SSO URL
+  name: SSO_URL
+  required: true
+- description: SSO Client ID
+  name: SSO_CLIENT_ID
+  value: coolstore
+  required: true
+- description: SSO Public Key
+  name: SSO_PUBLIC_KEY
+  required: true
